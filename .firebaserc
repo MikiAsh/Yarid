@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fairil-aae18": {
+      "hosting": {
+        "Yarid": [
+          "fairil-aae18"
+        ]
+      }
+    }
+  }
+}
