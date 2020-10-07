@@ -1,0 +1,6 @@
+@import "~src/assets/sass/variables.scss";
+
+:host {
+  flex: 1;
+  background-color: $color-background;
+}
