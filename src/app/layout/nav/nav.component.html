@@ -1,7 +1,6 @@
-<p>nav works!</p>
-
-<ul>
-  <li *ngFor="let entry of menuEntries">
+<nav>
+  <button mat-stroked-button *ngFor="let entry of menuEntries">
     {{ entry.displayName }}
-  </li>
-</ul>
+  </button>
+</nav>
+

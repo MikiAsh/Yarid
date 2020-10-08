@@ -5,3 +5,8 @@
   background-color: $color-background;
   direction: rtl;
 }
+
+nav {
+  display: flex;
+  flex-direction: column;
+}

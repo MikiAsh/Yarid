@@ -14,7 +14,7 @@
     grid-row: main-start / footer-start;
     grid-column: page-start / main-end;
   }
-  & > nav {
+  & > .nav-container {
     display: flex;
     background-color: #de7a67;
     grid-row: main-start / page-end;
