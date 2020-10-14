@@ -9,4 +9,10 @@
 nav {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  .nav-item {
+    margin: 10px;
+    border-radius: 40px;
+    width: 272px;
+  }
 }
