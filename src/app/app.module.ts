@@ -12,6 +12,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MainComponent } from './layout/main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
