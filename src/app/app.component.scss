@@ -1,28 +1,42 @@
 #app-grid {
   height: 100vh;
-  display: grid;
-  grid-template-rows: [page-start] 136px [main-start] 1fr [footer-start] 50px [page-end];
-  grid-template-columns: [page-start] 1fr [main-end nav-start] 384px [page-end];
+  display: flex;
+  flex-direction: column;
+  // & > * {
+  //   border: 1px dashed;
+  // }
   & > header {
     display: flex;
-    grid-row: page-start / main-start;
-    grid-column: page-start / page-end;
+    height: 96px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
   }
-  & > main {
-    display: flex;
-    background-color: #ffb0a1;
-    grid-row: main-start / footer-start;
-    grid-column: page-start / main-end;
-  }
-  & > .nav-container {
-    display: flex;
-    background-color: #de7a67;
-    grid-row: main-start / page-end;
-    grid-column: nav-start / page-end;
+  & > .main-pane{
+    display: grid;
+    grid-template-rows: [banner-start] 400px [main-start] 1fr [main-end];
+    grid-template-columns: [page-start] 1fr [nav-start] 384px [page-end];
+    flex: 1;
+    & > .banner {
+      grid-row: banner-start / main-start;
+      grid-column: page-start / page-end;
+      background-image: url('/assets/img/banner.png');
+    }
+    & > .content {
+      display: flex;
+      flex: 1;
+      grid-row: main-start / main-end;
+      grid-column: page-start / nav-start;
+    }
+    & > .nav-container {
+      display: flex;
+      grid-row: main-start / main-end;
+      grid-column: nav-start / page-end;
+    }
   }
   & > footer {
     display: flex;
-    grid-row: footer-start / page-end;
-    grid-column: page-start / page-end;
+    height: 96px;
   }
 }
