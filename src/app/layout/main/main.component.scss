@@ -4,4 +4,6 @@
   flex: 1;
   background-color: $color-background;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
