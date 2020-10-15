@@ -1,4 +1,15 @@
 :host {
   flex: 1;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  direction: rtl;
+  margin-right: 140px;
+  img {
+    margin-right: 12px;
+  }
 }
