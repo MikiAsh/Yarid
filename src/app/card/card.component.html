@@ -4,8 +4,14 @@
     <div class="no-item-img-container">
       <i class="material-icons no-item-img">storefront</i>
     </div>
-    <mat-card-title>שם הדוכן</mat-card-title>
-    <mat-card-content>זהו תיאור הדוכן, הדוכן מוכר צעצועים, כלי כתיבה, ציוד לסטודנט ולבית הספר משלוחים עד הבית והפתעות.</mat-card-content>
-    <footer>רחובות</footer>
+    <mat-card-title>
+      <ng-content select="slot-title"></ng-content>
+    </mat-card-title>
+    <mat-card-content>
+      <ng-content select="slot-content"></ng-content>
+    </mat-card-content>
+    <footer>
+      <ng-content select="slot-footer"></ng-content>
+    </footer>
 </mat-card>
 
