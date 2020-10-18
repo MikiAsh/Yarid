@@ -10,11 +10,11 @@ import { environment } from '../environments/environment';
 import { HeaderComponent } from './layout/header/header.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { MainComponent } from './layout/main/main.component';
 import { CardComponent } from './card/card.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { StoresComponent } from './stores/stores.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import {MatCardModule} from '@angular/material/card';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    MainComponent,
-    CardComponent
+    CardComponent,
+    StoresComponent
   ],
   imports: [
     BrowserModule,

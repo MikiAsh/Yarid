@@ -1,0 +1,14 @@
+<ng-container *ngFor="let store of stores$ | async">
+  <yrd-card>
+    <ng-container ngProjectAs="slot-title">
+      {{ store.name }}
+    </ng-container>
+    <ng-container ngProjectAs="slot-content">
+      {{ store.desc }}
+    </ng-container>
+    <ng-container ngProjectAs="slot-footer">
+      {{ store.city }}
+    </ng-container>
+  </yrd-card>
+</ng-container>
+
