@@ -1,14 +1,15 @@
 @import '~@angular/material/theming';
 
-@include mat-core();
+$custom-typography: mat-typography-config(
+  $font-family: 'Assistant, sans-serif',
+);
+@include mat-core($custom-typography);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $my-theme-primary: mat-palette($mat-deep-orange);
 $my-theme-accent:  mat-palette($mat-light-blue, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
 $my-theme-warn:    mat-palette($mat-red);
 
 $my-theme: mat-light-theme((
