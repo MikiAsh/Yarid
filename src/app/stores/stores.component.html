@@ -1,5 +1,13 @@
 <ng-container *ngFor="let store of stores$ | async">
   <yrd-card>
+    <ng-container ngProjectAs="slot-img" *ngIf="store.store_img_url; else no_img">
+      <img mat-card-image [src]="store.store_img_url" alt="" />
+    </ng-container>
+    <ng-template #no_img>
+      <div class="no-item-img-container">
+        <i class="material-icons no-item-img">storefront</i>
+      </div>
+    </ng-template>
     <ng-container ngProjectAs="slot-title">
       {{ store.name }}
     </ng-container>

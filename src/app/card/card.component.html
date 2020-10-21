@@ -1,9 +1,5 @@
 <mat-card class="card">
-  <!-- add a if/else for displaying the img or the no-item-container -->
-    <!-- <img mat-card-image src="/assets/img/logo.png" alt="" /> -->
-    <div class="no-item-img-container">
-      <i class="material-icons no-item-img">storefront</i>
-    </div>
+    <ng-content select="slot-img"></ng-content>
     <mat-card-title>
       <ng-content select="slot-title"></ng-content>
     </mat-card-title>

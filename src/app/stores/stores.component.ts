@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StoresService } from './stores.service';
+import { Store } from '@models/store';
 
 @Component({
   selector: 'yrd-stores',
@@ -8,7 +9,7 @@ import { StoresService } from './stores.service';
   styleUrls: ['./stores.component.scss'],
 })
 export class StoresComponent implements OnInit {
-  stores$: Observable<any>;
+  stores$: Observable<Store[]>;
   constructor(private db: StoresService) {}
 
   ngOnInit(): void {

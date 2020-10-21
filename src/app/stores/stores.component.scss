@@ -8,3 +8,17 @@
   padding-left: 128px;
   // justify-content: space-evenly;
 }
+
+img[mat-card-image] {
+  max-width: 256px;
+  max-height: 256px;
+}
+
+.no-item-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .no-item-img {
+    font-size: 120px;
+  }
+}
