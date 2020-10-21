@@ -2,6 +2,8 @@
 
 $custom-typography: mat-typography-config(
   $font-family: 'Assistant, sans-serif',
+  $button: mat-typography-level(14px, 14px, 600),
+  /*https://material.angular.io/guide/typography*/
 );
 @include mat-core($custom-typography);
 
