@@ -10,8 +10,9 @@
 }
 
 img[mat-card-image] {
-  max-width: 256px;
-  max-height: 256px;
+  width: 256px;
+  height: 256px;
+  object-fit: cover;
 }
 
 .no-item-img-container {
@@ -21,4 +22,13 @@ img[mat-card-image] {
   .no-item-img {
     font-size: 120px;
   }
+}
+
+h4 {
+  margin: 8px 0;
+}
+
+footer[slot-footer] {
+  margin-top: 3px;
+  color: $color-text-secondary;
 }

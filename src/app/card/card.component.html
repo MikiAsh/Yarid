@@ -4,10 +4,9 @@
       <ng-content select="slot-title"></ng-content>
     </mat-card-title>
     <mat-card-content>
-      <ng-content select="slot-content"></ng-content>
+      <ng-content select="[slot-content]"></ng-content>
     </mat-card-content>
-    <footer>
-      <ng-content select="slot-footer"></ng-content>
-    </footer>
+    
+    <ng-content select="[slot-footer]"></ng-content>
 </mat-card>
 
