@@ -1,0 +1,23 @@
+@import "variables.scss";
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-primary;
+  h4 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .close-dialog {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    color: $color-primary;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+}

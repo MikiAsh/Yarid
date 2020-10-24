@@ -11,12 +11,22 @@ import { HeaderComponent } from './layout/header/header.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { CardComponent } from './card/card.component';
-import {MatButtonModule} from '@angular/material/button';
-import { globalConfig } from '@config/mat-dialog';
-import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from "@angular/material/dialog";
+import { MatButtonModule } from '@angular/material/button';
+import { dialogConfig } from '@config/mat-dialog';
+import { appearance } from '@config/mat-form-field-appearance';
+import { MatCardModule } from '@angular/material/card';
+import {
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+} from '@angular/material/dialog';
+import {
+  MatFormFieldModule,
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { StoresComponent } from './stores/stores.component';
 import { NewStoreComponent } from './dialogs/new-store/new-store.component';
+import { DialogHeaderComponent } from './dialogs/dialog-header/dialog-header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +36,8 @@ import { NewStoreComponent } from './dialogs/new-store/new-store.component';
     FooterComponent,
     CardComponent,
     StoresComponent,
-    NewStoreComponent
+    NewStoreComponent,
+    DialogHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +47,17 @@ import { NewStoreComponent } from './dialogs/new-store/new-store.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
-  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: globalConfig}],
+  providers: [
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: dialogConfig },
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: appearance,
+    },
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
