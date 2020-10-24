@@ -14,9 +14,11 @@ nav {
   top: 108px;
   
   .nav-item {
+    box-sizing: border-box;
     margin: 10px;
     border-radius: 40px;
     width: 272px;
+    height: 48px;
     border-color: $color-primary;
   }
 }
