@@ -1,1 +1,1 @@
-export const globalConfig = { hasBackdrop: true, direction: 'rtl' };
+export const dialogConfig = { hasBackdrop: true, direction: 'rtl' };
