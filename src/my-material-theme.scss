@@ -2,7 +2,7 @@
 
 $custom-typography: mat-typography-config(
   $font-family: 'Assistant, sans-serif',
-  $button: mat-typography-level(14px, 14px, 600),
+  $button: mat-typography-level(18px, 23px, 700),
   $subheading-1: mat-typography-level(18px, 23px, 600),
   $caption: mat-typography-level(14px, 18px, 400),
   /*https://material.angular.io/guide/typography*/
@@ -13,7 +13,7 @@ $custom-typography: mat-typography-config(
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $my-theme-primary: mat-palette($mat-deep-orange);
-$my-theme-accent:  mat-palette($mat-light-blue, A200, A100, A400);
+$my-theme-accent:  mat-palette($mat-light-blue, 500, A100, A400);
 $my-theme-warn:    mat-palette($mat-red);
 
 $my-theme: mat-light-theme((
