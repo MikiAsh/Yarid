@@ -1,24 +1,28 @@
 @import "variables.scss";
 
 :host {
-
-}
-
-.header-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  color: $color-primary;
-  h4 {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
+  height: 100%;
+  
+  .main-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    form {
+      display: flex;
+      flex-direction: column;
+      ::ng-deep .mat-form-field-outline > [class^="mat-form-field-outline"] {
+        background-color: #fff;
+      }
+    }
+    .create-store-button {
+      border-radius: 40px;
+      margin-bottom: 56px;
+    }
   }
-}
-
-.create-store-button {
-  box-sizing: border-box;
-  border-radius: 40px;
-  // position: fixed;
-  // bottom: 56px;
 }

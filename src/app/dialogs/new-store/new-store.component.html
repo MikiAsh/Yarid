@@ -1,8 +1,39 @@
-<div class="header-container">
-  <h4>חנות חדשה</h4>
-  <i class="material-icons">close</i>
-</div>
+<yrd-dialog-header title="חנות חדשה"></yrd-dialog-header>
 
-<button mat-flat-button color="accent" class="create-store-button">
-  צור את החנות שלי
-</button>
+<div class="main-content">
+  <form>
+    <mat-form-field color="accent">
+      <mat-label>שם</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>עיר</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>רחוב ומספר</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>אימייל</mat-label>
+      <input matInput type="email">
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>טלפון</mat-label>
+      <input matInput>
+    </mat-form-field>
+  
+    <mat-form-field color="accent">
+      <mat-label>הערות</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </form>
+
+	<button mat-flat-button color="accent" class="create-store-button">
+	  צור את החנות שלי
+	</button>
+</div>
