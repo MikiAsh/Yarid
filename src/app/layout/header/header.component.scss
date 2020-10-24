@@ -1,9 +1,27 @@
+@import "variables.scss";
+
 :host {
   flex: 1;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.button-container {
+  margin: 0 137px;
+  .new-store-button {
+    box-sizing: border-box;
+    border-radius: 40px;
+    margin-right: 26px;
+    color: #fff;
+    width: 192px;
+    height: 48px;
+  }
+  a {
+    color: $color-accent;
+    @extend %link
+  }
 }
 
 .logo-container {
