@@ -11,10 +11,12 @@ import { HeaderComponent } from './layout/header/header.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { CardComponent } from './card/card.component';
-
 import {MatButtonModule} from '@angular/material/button';
+import { globalConfig } from '@config/mat-dialog';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from "@angular/material/dialog";
 import { StoresComponent } from './stores/stores.component';
+import { NewStoreComponent } from './dialogs/new-store/new-store.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { StoresComponent } from './stores/stores.component';
     NavComponent,
     FooterComponent,
     CardComponent,
-    StoresComponent
+    StoresComponent,
+    NewStoreComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +35,10 @@ import { StoresComponent } from './stores/stores.component';
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: globalConfig}],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
