@@ -1,39 +1,35 @@
 <yrd-dialog-header title="חנות חדשה"></yrd-dialog-header>
 
 <div class="main-content">
-  <form>
-    <mat-form-field color="accent">
-      <mat-label>שם</mat-label>
-      <input matInput>
-    </mat-form-field>
-
-    <mat-form-field color="accent">
-      <mat-label>עיר</mat-label>
-      <input matInput>
-    </mat-form-field>
-
-    <mat-form-field color="accent">
-      <mat-label>רחוב ומספר</mat-label>
-      <input matInput>
-    </mat-form-field>
-
-    <mat-form-field color="accent">
-      <mat-label>אימייל</mat-label>
-      <input matInput type="email">
-    </mat-form-field>
-
-    <mat-form-field color="accent">
-      <mat-label>טלפון</mat-label>
-      <input matInput>
-    </mat-form-field>
+  <form [formGroup]="newStoreForm" class="new-store-form" (ngSubmit)="onSubmit()">
+    <div class="fields-container">
+      <mat-form-field color="accent">
+        <mat-label>שם החנות</mat-label>
+        <input matInput formControlName="name">
+        <mat-error *ngIf="newStoreForm.get('name').invalid">נא הזן את שם החנות</mat-error>
+      </mat-form-field>
   
-    <mat-form-field color="accent">
-      <mat-label>הערות</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
-  </form>
+      <mat-form-field color="accent">
+        <mat-label>תיאור כללי של החנות</mat-label>
+        <textarea matInput formControlName="desc"></textarea>
+      </mat-form-field>
+  
+      <mat-form-field color="accent">
+        <mat-label>עיר</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
+  
+      <mat-form-field color="accent">
+        <mat-label>אימייל</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="newStoreForm.get('email').invalid">נא הזן אימייל תקין</mat-error>
+      </mat-form-field>
+    </div>
 
-	<button mat-flat-button color="accent" class="create-store-button">
-	  צור את החנות שלי
-	</button>
+    <mat-dialog-actions align="center">
+    <button mat-flat-button [disabled]="this.newStoreForm.invalid" color="accent" class="create-store-button">
+      צור את החנות שלי
+    </button>
+  </mat-dialog-actions>
+  </form>
 </div>

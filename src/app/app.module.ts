@@ -14,6 +14,7 @@ import { CardComponent } from './card/card.component';
 import { MatButtonModule } from '@angular/material/button';
 import { dialogConfig } from '@config/mat-dialog';
 import { appearance } from '@config/mat-form-field-appearance';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import {
   MatDialogModule,
@@ -50,6 +51,7 @@ import { DialogHeaderComponent } from './dialogs/dialog-header/dialog-header.com
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: dialogConfig },
