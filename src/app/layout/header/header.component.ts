@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { NewStoreComponent } from '@app/dialogs/new-store/new-store.component';
+import { StoresService } from '@app/stores/stores.service';
 
 @Component({
   selector: 'yrd-header',
@@ -9,7 +10,7 @@ import { NewStoreComponent } from '@app/dialogs/new-store/new-store.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private storesService: StoresService) {}
 
   ngOnInit(): void {
   }
@@ -20,9 +21,11 @@ export class HeaderComponent implements OnInit {
     dialogConfig.height = '800px';
 
     const dialogRef = this.dialog.open(NewStoreComponent, dialogConfig);
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+    dialogRef.afterClosed().toPromise().then(store => this.createStore(store));
+  }
+
+  createStore(store): void {
+    this.storesService.createStore(store)
   }
 
 }

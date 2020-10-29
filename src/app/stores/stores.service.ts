@@ -12,4 +12,11 @@ export class StoresService {
   getStores(): Observable<Store[]> {
     return this.db.collection('stores').valueChanges() as Observable<Store[]>;
   }
+
+  createStore(store: Store) {
+    return this.db.collection('stores').add(store).then(result => 
+      res => {}, 
+      err => console.log('Creating store failed', err)
+      );
+  }
 }
