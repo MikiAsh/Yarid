@@ -1,4 +1,4 @@
-#app-grid {
+#app-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,8 +24,6 @@
       background-image: url('/assets/img/banner.png');
     }
     & > .content {
-      display: flex;
-      flex: 1;
       grid-row: main-start / main-end;
       grid-column: page-start / nav-start;
     }

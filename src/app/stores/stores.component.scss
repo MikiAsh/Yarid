@@ -1,7 +1,6 @@
 @import "variables.scss";
 
 :host {
-  flex: 1;
   background-color: $color-background;
   display: flex;
   flex-wrap: wrap;
