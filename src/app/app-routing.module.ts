@@ -6,8 +6,7 @@ import { SingleStoreComponent } from 'app/single-store/single-store.component';
 const routes: Routes = [
   { path: '', redirectTo: '/stores', pathMatch: 'full' },
   { path: 'stores', component: StoresComponent },
-  { path: 'store', component: SingleStoreComponent },
-  // { path: 'store/:id', component: SingleStoreComponent },
+  { path: 'store/:id', component: SingleStoreComponent },
 ];
 
 @NgModule({

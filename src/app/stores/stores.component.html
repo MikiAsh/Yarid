@@ -1,5 +1,5 @@
 <ng-container *ngFor="let store of stores$ | async">
-  <a routerLink="/store">
+  <a routerLink="/store/{{store.id}}">
     <yrd-card>
       <!-- image -->
       <ng-container ngProjectAs="slot-img" *ngIf="store.store_img_url; else no_img">

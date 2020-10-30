@@ -10,7 +10,7 @@ export class StoresService {
   constructor(private db: AngularFirestore) {}
   
   getStores(): Observable<Store[]> {
-    return this.db.collection('stores').valueChanges() as Observable<Store[]>;
+    return this.db.collection('stores').valueChanges({ idField: 'id' }) as Observable<Store[]>;
   }
 
   createStore(store: Store) {
