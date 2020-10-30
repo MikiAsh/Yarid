@@ -1,28 +1,30 @@
 <ng-container *ngFor="let store of stores$ | async">
-  <yrd-card>
-    <!-- image -->
-    <ng-container ngProjectAs="slot-img" *ngIf="store.store_img_url; else no_img">
-      <img mat-card-image [src]="store.store_img_url" alt="" />
-    </ng-container>
-    <ng-template #no_img>
-      <div class="no-item-img-container">
-        <i class="material-icons no-item-img">storefront</i>
-      </div>
-    </ng-template>
-    <!-- store title -->
-    <ng-container ngProjectAs="slot-title">
-      <h4 class="mat-h4">
-        {{ store.name }}
-      </h4>
-    </ng-container>
-    <!-- main text content -->
-    <p slot-content class="mat-caption">
-      {{ store.desc }}
-    </p>
-    <!-- footer -->
-    <footer slot-footer class="mat-caption">
-      {{ store.city }}
-    </footer>
-  </yrd-card>
+  <a routerLink="/store">
+    <yrd-card>
+      <!-- image -->
+      <ng-container ngProjectAs="slot-img" *ngIf="store.store_img_url; else no_img">
+        <img mat-card-image [src]="store.store_img_url" alt="" />
+      </ng-container>
+      <ng-template #no_img>
+        <div class="no-item-img-container">
+          <i class="material-icons no-item-img">storefront</i>
+        </div>
+      </ng-template>
+      <!-- store title -->
+      <ng-container ngProjectAs="slot-title">
+        <h4 class="mat-h4">
+          {{ store.name }}
+        </h4>
+      </ng-container>
+      <!-- main text content -->
+      <p slot-content class="mat-caption">
+        {{ store.desc }}
+      </p>
+      <!-- footer -->
+      <footer slot-footer class="mat-caption">
+        {{ store.city }}
+      </footer>
+    </yrd-card>
+  </a>
 </ng-container>
 
