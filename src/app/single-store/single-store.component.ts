@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StoresService } from '../stores/stores.service';
+import { Store } from '@models/store';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'yrd-single-store',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleStoreComponent implements OnInit {
 
-  constructor() { }
+  constructor(private db: StoresService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    const storeId = this.route.snapshot.paramMap.get('id');
+    console.log('route id', storeId);
   }
 
 }
