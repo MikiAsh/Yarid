@@ -1,1 +1,7 @@
-<p>single-store works!</p>
+<div *ngIf="store; else loading">
+  {{ store | json }}
+</div>
+
+<ng-template #loading>
+  ...טוען
+</ng-template>
