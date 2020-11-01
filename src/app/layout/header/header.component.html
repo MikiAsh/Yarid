@@ -2,10 +2,12 @@
   <button mat-flat-button color="accent" class="new-store-button" (click)="popDialog()">
     צור חנות
   </button>
-  <a [routerLink]="[]">החשבון שלי</a>
+  <a [routerLink]="[]" class="account">החשבון שלי</a>
 </div>
 
-<div class="logo-container">
-  <img src="/assets/img/logo.png" alt="">
-  <div>פתאום כולם מוכרים אונליין</div>
-</div>
+<a  [routerLink]="['']" class="home-link">
+  <div class="logo-container">
+    <img src="/assets/img/logo.png" alt="">
+    <div>פתאום כולם מוכרים אונליין</div>
+  </div>
+</a>
