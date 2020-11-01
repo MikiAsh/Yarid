@@ -3,6 +3,7 @@ import { StoresService } from '../stores/stores.service';
 import { Store } from '@models/store';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { clone } from "@app/utils/util";
 
 @Component({
   selector: 'yrd-single-store',
@@ -17,7 +18,7 @@ export class SingleStoreComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const storeId = this.route.snapshot.paramMap.get('id');
     this.sub = this.storesService.getStore(storeId).subscribe(data => {
-      this.store = data; 
+      this.store = clone(data); 
       this.storesService.selectedStore$.next(data)
     });
   }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { navData } from "@config/nav-menu";
+import { Component, OnInit, Input } from '@angular/core';
+import { MenuEntry } from "@app/models/menu-entry";
 
 @Component({
   selector: 'yrd-nav',
@@ -7,8 +7,7 @@ import { navData } from "@config/nav-menu";
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
-  menuEntries = navData;
+  @Input() menuEntries: MenuEntry[];
 
   constructor() { }
 
