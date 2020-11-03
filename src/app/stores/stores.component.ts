@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StoresService } from './stores.service';
 import { Store } from '@models/store';
-import { NavService } from '@app/layout/nav/nav.service';
+import { DisplayService } from '@app/services/display.service';
 import { navData } from '@config/nav-menu';
 
 @Component({
@@ -12,7 +12,7 @@ import { navData } from '@config/nav-menu';
 })
 export class StoresComponent implements OnInit {
   stores$: Observable<Store[]>;
-  constructor(private storesService: StoresService, private navService: NavService) {}
+  constructor(private storesService: StoresService, private navService: DisplayService) {}
 
   ngOnInit(): void {
     this.stores$ = this.storesService.getStores();

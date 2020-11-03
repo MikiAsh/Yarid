@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { clone } from '@app/utils/util';
 import { MenuEntry } from '@app/models/menu-entry';
-import { NavService } from '@app/layout/nav/nav.service';
+import { DisplayService } from '@app/services/display.service';
 import { emptyMenuDefault } from '@config/nav-menu';
 
 @Component({
@@ -16,7 +16,7 @@ import { emptyMenuDefault } from '@config/nav-menu';
 export class SingleStoreComponent implements OnInit, OnDestroy {
   store: Store;
   sub: Subscription;
-  constructor(private storesService: StoresService, private route: ActivatedRoute, private navService: NavService) {}
+  constructor(private storesService: StoresService, private route: ActivatedRoute, private navService: DisplayService) {}
 
   ngOnInit(): void {
     const storeId = this.route.snapshot.paramMap.get('id');

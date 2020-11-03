@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class NavService {
+export class DisplayService {
   menu$ = new BehaviorSubject<MenuEntry[]>(null);
   constructor() { }
 }

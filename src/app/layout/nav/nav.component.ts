@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuEntry } from "@app/models/menu-entry";
-import { NavService } from '@app/layout/nav/nav.service';
+import { DisplayService } from '@app/services/display.service';
 import { Subscription, Observable } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ import { Subscription, Observable } from 'rxjs';
 export class NavComponent implements OnInit {
   menuEntries: Observable<MenuEntry[]>;
   
-  constructor(private navService: NavService) {}
+  constructor(private navService: DisplayService) {}
 
   ngOnInit(): void {
       this.menuEntries = this.navService.menu$.asObservable();
