@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuEntry } from "@app/models/menu-entry";
+import { NavService } from '@app/layout/nav/nav.service';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'yrd-nav',
@@ -7,11 +9,12 @@ import { MenuEntry } from "@app/models/menu-entry";
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  @Input() menuEntries: MenuEntry[];
-
-  constructor() { }
+  menuEntries: Observable<MenuEntry[]>;
+  
+  constructor(private navService: NavService) {}
 
   ngOnInit(): void {
+      this.menuEntries = this.navService.menu$.asObservable();
   }
 
 }
