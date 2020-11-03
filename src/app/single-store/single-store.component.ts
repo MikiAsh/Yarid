@@ -24,7 +24,11 @@ export class SingleStoreComponent implements OnInit, OnDestroy {
       this.store = clone(data); 
       this.storesService.selectedStore$.next(data);
       this.populateNavMenu(data);
+      this.populateBanner(data);
     });
+  }
+  populateBanner(data: Store) {
+    this.displayService.banner$.next(data);
   }
 
   populateNavMenu(store: Store): void {
