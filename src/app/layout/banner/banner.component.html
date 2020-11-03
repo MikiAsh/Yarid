@@ -1,1 +1,12 @@
-<div></div>
+<div *ngIf="(store$ | async) as store; else without_details" class="banner-wrapper">
+  <div class="image"></div>
+  <div class="store-details">
+    <h4 class="header">{{store.name}}</h4>
+    <div class="contact">{{ store.city }}</div>
+    <div class="description">{{ store.desc }}</div>
+  </div>
+</div>
+
+<ng-template #without_details>
+  <div class="image"></div>
+</ng-template>

@@ -1,5 +1,49 @@
-div {
+@import "variables.scss";
+
+:host {
+  background-color: $color-background;
+  display: block;
+}
+
+.image {
   background-image: url('/assets/img/banner.png');
   background-repeat: no-repeat;
   height: 400px;
+}
+
+.banner-wrapper {
+  box-sizing: border-box;
+  direction: rtl;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px 0;
+  .image {
+    height: 336px;
+    margin: 0 auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+  .store-details{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 300px 16px 0;
+    background-color: #fff;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    .header {
+      font-size: 48px;
+      line-height: 63px;
+      margin: 0;
+    }
+    .contact {
+      color: $color-text-secondary;
+      font-size: 18px;
+      line-height: 23px;
+    }
+    .description {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
 }

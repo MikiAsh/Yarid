@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayService } from '@app/services/display.service';
+import { Store } from '@models/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'yrd-banner',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-
-  constructor() { }
+  store$: Observable<Store>;
+  constructor(private displayService: DisplayService) { }
 
   ngOnInit(): void {
+    this.store$ = this.displayService.banner$.asObservable();
   }
 
 }
