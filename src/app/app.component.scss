@@ -15,7 +15,7 @@
   }
   & > .main-pane {
     display: grid;
-    grid-template-rows: [header-spacer] 96px [banner-start] 400px [main-start] 1fr [main-end];
+    grid-template-rows: [header-spacer] 96px [banner-start] auto [main-start] 1fr [main-end];
     /* because the header is fixed positioned and floating, the header spacer fills its place in the document flow */
     grid-template-columns: [page-start] 1fr [nav-start] 384px [page-end];
     flex: 1;
@@ -24,10 +24,10 @@
       grid-row: header-spacer / banner-start;
       grid-column: page-start / page-end;
     }
-    & > .banner {
+    & > .banner-container {
       grid-row: banner-start / main-start;
       grid-column: page-start / page-end;
-      background-image: url('/assets/img/banner.png');
+      // background-image: url('/assets/img/banner.png');
     }
     & > .content {
       grid-row: main-start / main-end;
