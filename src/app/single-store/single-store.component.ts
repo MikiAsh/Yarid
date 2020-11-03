@@ -3,7 +3,9 @@ import { StoresService } from '../stores/stores.service';
 import { Store } from '@models/store';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { clone } from "@app/utils/util";
+import { clone } from '@app/utils/util';
+import { MenuEntry } from '@app/models/menu-entry';
+import { NavService } from '@app/layout/nav/nav.service';
 
 @Component({
   selector: 'yrd-single-store',
@@ -13,14 +15,24 @@ import { clone } from "@app/utils/util";
 export class SingleStoreComponent implements OnInit, OnDestroy {
   store: Store;
   sub: Subscription;
-  constructor(private storesService: StoresService, private route: ActivatedRoute) {}
+  constructor(private storesService: StoresService, private route: ActivatedRoute, private navService: NavService) {}
 
   ngOnInit(): void {
     const storeId = this.route.snapshot.paramMap.get('id');
     this.sub = this.storesService.getStore(storeId).subscribe(data => {
       this.store = clone(data); 
-      this.storesService.selectedStore$.next(data)
+      this.storesService.selectedStore$.next(data);
+      this.populateNavMenu(data);
     });
+  }
+
+  populateNavMenu(store: Store): void {
+    let menuEntries: MenuEntry[];
+
+    if (store.tags) {
+      menuEntries = store.tags.map(tag => ({displayName: tag}));
+      this.navService.menu$.next(menuEntries);
+    }
   }
 
   ngOnDestroy(): void {
