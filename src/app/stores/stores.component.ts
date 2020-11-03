@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StoresService } from './stores.service';
 import { Store } from '@models/store';
+import { NavService } from '@app/layout/nav/nav.service';
+import { navData } from '@config/nav-menu';
 
 @Component({
   selector: 'yrd-stores',
@@ -10,9 +12,10 @@ import { Store } from '@models/store';
 })
 export class StoresComponent implements OnInit {
   stores$: Observable<Store[]>;
-  constructor(private db: StoresService) {}
+  constructor(private storesService: StoresService, private navService: NavService) {}
 
   ngOnInit(): void {
-    this.stores$ = this.db.getStores();
+    this.stores$ = this.storesService.getStores();
+    this.navService.menu$.next(navData);
   }
 }
