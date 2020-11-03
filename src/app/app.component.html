@@ -3,7 +3,9 @@
     <yrd-header></yrd-header>
   </header>
   <div class="main-pane">
-    <div class="banner"></div><!-- banner is background image -->
+    <!-- because the header is fixed positioned and floating, the header spacer fills its place in the document flow -->
+    <div class="header-spacer"></div>
+    <div class="banner"></div>
     <main class="content">
       <router-outlet></router-outlet>
     </main>

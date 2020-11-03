@@ -13,11 +13,17 @@
     width: 100%;
     z-index: 100;
   }
-  & > .main-pane{
+  & > .main-pane {
     display: grid;
-    grid-template-rows: [banner-start] 400px [main-start] 1fr [main-end];
+    grid-template-rows: [header-spacer] 96px [banner-start] 400px [main-start] 1fr [main-end];
+    /* because the header is fixed positioned and floating, the header spacer fills its place in the document flow */
     grid-template-columns: [page-start] 1fr [nav-start] 384px [page-end];
     flex: 1;
+    .header-spacer {
+      background-color: purple;
+      grid-row: header-spacer / banner-start;
+      grid-column: page-start / page-end;
+    }
     & > .banner {
       grid-row: banner-start / main-start;
       grid-column: page-start / page-end;
