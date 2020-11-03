@@ -17,5 +17,6 @@ export class StoresComponent implements OnInit {
   ngOnInit(): void {
     this.stores$ = this.storesService.getStores();
     this.displayService.menu$.next(navData);
+    this.displayService.banner$.next(null);
   }
 }
