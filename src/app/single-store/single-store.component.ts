@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { clone } from '@app/utils/util';
 import { MenuEntry } from '@app/models/menu-entry';
 import { NavService } from '@app/layout/nav/nav.service';
+import { emptyMenuDefault } from '@config/nav-menu';
 
 @Component({
   selector: 'yrd-single-store',
@@ -32,6 +33,9 @@ export class SingleStoreComponent implements OnInit, OnDestroy {
     if (store.tags) {
       menuEntries = store.tags.map(tag => ({displayName: tag}));
       this.navService.menu$.next(menuEntries);
+    }
+    else {
+      this.navService.menu$.next(emptyMenuDefault);
     }
   }
 
