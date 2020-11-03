@@ -12,10 +12,10 @@ import { navData } from '@config/nav-menu';
 })
 export class StoresComponent implements OnInit {
   stores$: Observable<Store[]>;
-  constructor(private storesService: StoresService, private navService: DisplayService) {}
+  constructor(private storesService: StoresService, private displayService: DisplayService) {}
 
   ngOnInit(): void {
     this.stores$ = this.storesService.getStores();
-    this.navService.menu$.next(navData);
+    this.displayService.menu$.next(navData);
   }
 }

@@ -11,10 +11,10 @@ import { Subscription, Observable } from 'rxjs';
 export class NavComponent implements OnInit {
   menuEntries: Observable<MenuEntry[]>;
   
-  constructor(private navService: DisplayService) {}
+  constructor(private displayService: DisplayService) {}
 
   ngOnInit(): void {
-      this.menuEntries = this.navService.menu$.asObservable();
+      this.menuEntries = this.displayService.menu$.asObservable();
   }
 
 }

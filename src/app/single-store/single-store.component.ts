@@ -16,7 +16,7 @@ import { emptyMenuDefault } from '@config/nav-menu';
 export class SingleStoreComponent implements OnInit, OnDestroy {
   store: Store;
   sub: Subscription;
-  constructor(private storesService: StoresService, private route: ActivatedRoute, private navService: DisplayService) {}
+  constructor(private storesService: StoresService, private route: ActivatedRoute, private displayService: DisplayService) {}
 
   ngOnInit(): void {
     const storeId = this.route.snapshot.paramMap.get('id');
@@ -32,10 +32,10 @@ export class SingleStoreComponent implements OnInit, OnDestroy {
 
     if (store.tags) {
       menuEntries = store.tags.map(tag => ({displayName: tag}));
-      this.navService.menu$.next(menuEntries);
+      this.displayService.menu$.next(menuEntries);
     }
     else {
-      this.navService.menu$.next(emptyMenuDefault);
+      this.displayService.menu$.next(emptyMenuDefault);
     }
   }
 
