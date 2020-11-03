@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { StoresComponent } from './stores/stores.component';
 import { NewStoreComponent } from './dialogs/new-store/new-store.component';
 import { DialogHeaderComponent } from './dialogs/dialog-header/dialog-header.component';
+import { BannerComponent } from './layout/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DialogHeaderComponent } from './dialogs/dialog-header/dialog-header.com
     StoresComponent,
     NewStoreComponent,
     DialogHeaderComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
