@@ -2,7 +2,7 @@
   <div class="background-image"></div>
   <div class="banner-footer">
     <div class="right">
-      <img [src]="store.store_img_url" class="store-img">
+      <img *ngIf="store.store_img_url" [src]="store.store_img_url" class="store-img">
       <div class="details">
         <h4 class="header">{{store.name}}</h4>
         <div class="contact">
