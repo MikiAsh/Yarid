@@ -5,45 +5,90 @@
   display: block;
 }
 
-.image {
+.background-image {
   background-image: url('/assets/img/banner.png');
   background-repeat: no-repeat;
   height: 400px;
 }
 
-.banner-wrapper {
+.banner-wrapper { // visible only in store view
   box-sizing: border-box;
   direction: rtl;
   max-width: 1440px;
   margin: 0 auto;
   overflow: hidden;
   padding: 40px 0;
-  .image {
+  .background-image {
     height: 336px;
     margin: 0 auto;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
   }
-  .store-details{
+  .banner-footer {
     display: flex;
-    flex-direction: column;
-    padding: 16px 300px 16px 0;
+    justify-content: space-between;
     background-color: #fff;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    .header {
-      font-size: 48px;
-      line-height: 63px;
-      margin: 0;
+    position: relative;
+    .right {
+      .store-img {
+        width: 256px;
+        height: 256px;
+        object-fit: cover;
+        align-self: flex-end;
+        position: absolute;
+        bottom: 42px;
+        border-radius: 12px;
+        right: 36px;
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 320px 16px 0;      
+        .header {
+          font-size: 48px;
+          line-height: 63px;
+          margin: 0;
+        }
+        .contact {
+          color: $color-text-secondary;
+          font-size: 18px;
+          line-height: 23px;
+          .address {
+            display: inline-flex;
+            margin-left: 16px;
+          }
+          .phone {
+            display: inline-flex;
+          }
+          .material-icons {
+            margin-left: 8px;
+          }
+        }
+        .description {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
     }
-    .contact {
-      color: $color-text-secondary;
-      font-size: 18px;
-      line-height: 23px;
-    }
-    .description {
-      font-size: 24px;
-      line-height: 32px;
+    .left {
+      padding: 24px 0;
+      margin-left: 35px;
+      .actions {
+        display: flex;
+        align-items: center;
+        .actions-button {
+          border-radius: 40px;
+          width: 288px;
+          height: 48px;
+          border-color: $color-accent;
+        }
+        .share {
+          color: $color-accent;
+          margin: 0 35px;
+        }
+      }
     }
   }
 }

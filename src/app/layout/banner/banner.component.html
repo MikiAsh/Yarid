@@ -1,12 +1,26 @@
 <div *ngIf="(store$ | async) as store; else without_details" class="banner-wrapper">
-  <div class="image"></div>
-  <div class="store-details">
-    <h4 class="header">{{store.name}}</h4>
-    <div class="contact">{{ store.city }}</div>
-    <div class="description">{{ store.desc }}</div>
+  <div class="background-image"></div>
+  <div class="banner-footer">
+    <div class="right">
+      <img [src]="store.store_img_url" class="store-img">
+      <div class="details">
+        <h4 class="header">{{store.name}}</h4>
+        <div class="contact">
+          <span class="address"><i class="material-icons">place</i>{{ store.city }}</span>
+          <span class="phone"><i class="material-icons">phone</i>08-7945554</span>
+        </div>
+        <div class="description">{{ store.desc }}</div>
+      </div>
+    </div>
+    <div class="left">
+      <div class="actions">
+        <button mat-stroked-button color="accent" class="actions-button">אודות, משלוחים, תשלום</button>
+        <i class="material-icons share">share</i>
+      </div>
+    </div>
   </div>
 </div>
 
 <ng-template #without_details>
-  <div class="image"></div>
+  <div class="background-image"></div>
 </ng-template>
