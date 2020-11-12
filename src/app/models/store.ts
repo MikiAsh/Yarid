@@ -6,5 +6,6 @@ export interface Store {
   city?: string;
   tags?: string[];
   store_img_url?: string;
+  back_img_url?: string;
   create_date?: Date;
 }

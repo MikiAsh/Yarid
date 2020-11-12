@@ -1,5 +1,6 @@
 <div *ngIf="(store$ | async) as store; else without_details" class="banner-wrapper">
-  <div class="background-image"></div>
+  <div class="background-image" 
+  style="background-image: url({{store.back_img_url||default_back_img_url}})"></div>
   <div class="banner-footer">
     <div class="right">
       <img *ngIf="store.store_img_url" [src]="store.store_img_url" class="store-img">
@@ -22,5 +23,5 @@
 </div>
 
 <ng-template #without_details>
-  <div class="background-image"></div>
+  <div class="background-image" style="background-image: url({{default_back_img_url}})"></div>
 </ng-template>

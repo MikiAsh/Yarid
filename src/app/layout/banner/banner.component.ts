@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class BannerComponent implements OnInit {
   store$: Observable<Store>;
+  default_back_img_url = '/assets/img/banner.png';
   constructor(private displayService: DisplayService) { }
 
   ngOnInit(): void {
